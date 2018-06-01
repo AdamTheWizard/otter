@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>The Otter Side</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    </head>
+    <style>
+        body {
+            background: linear-gradient(to left, #EB4D83 50%, #3FADE5 50%);
+            height:100vh;
+            transition: 1s;
+            overflow-x: hidden;
+        }
+        * {
+            padding:0;
+            margin:0;
+            font-family: sans-serif;
+        }
+        .header {
+            text-align:center;
+            padding:20px;
+            color:#FDDB33;
+            display:block;
+            position: absolute;
+            top:200px;
+            bottom:0;
+            left:0;
+            right:0;
+            margin:auto;
+            font-size:500%;
+        }
+        .helloHeader {
+            color:#FDDB33;
+            text-align:center;
+            text-transform: uppercase;
+            position:absolute;
+            top:175px;
+            bottom:0;
+            left:0;
+            right:0;
+            margin:auto;
+            display:block;
+        }
+        .img {
+            width:30%;
+            display:block;
+            opacity:0;
+            margin:0 auto;
+            border-radius:50%;;
+            position: relative;
+            top:40vh;
+            -webkit-filter: saturate(8);
+            filter: saturate(8);
+        }
+        .otter {
+            position:relative;
+            left:-1000px;
+        }
+        .side {
+            position:relative;
+            right:-1000px;
+        }
+        .puns {
+            text-align: center;
+            color:#fff;
+            display:block;
+            position: absolute;
+            bottom:0;
+            right:0;
+            margin:10px;
+        }
+        .faceContainer {
+            display:block;
+            position: absolute;
+            top:30vh;
+            bottom:0;
+            right:0;
+            left:calc(50vw - 265px);
+            margin: auto;
+        }
+        .face {
+            position: relative;
+            display: inline-block;
+            width: 240px;
+            height: 240px;
+            z-index:-1;
+            opacity:0;
+        }
+        .face:after {
+            content: "";
+            position: absolute;
+            top: 96px;
+            left: 50%;
+            width: 280px;
+            height: 80px;
+            margin-left: 0px;
+            border-bottom: 16px solid #222;
+            border-left: 1px solid #222;
+            border-right: 1px solid #222;
+            border-radius: 0 0 128px 128px;
+            transition: .5s;
+            cursor: pointer;
+        }
+        .face:hover:after {
+            border-bottom:64px solid #222;
+        }
+        .eyes {
+            border-radius: 50%;
+            position:absolute;
+            border:2px solid #222;
+            cursor: pointer;
+            transition: .5s;
+        }
+        .leftEye {
+            width:90px;
+            left:60%;
+        }
+        .rightEye {
+            width:90px;
+            left:120%;
+            -webkit-transform: scaleX(-1);
+            transform: scaleX(-1);
+        }
+        .inTheEyes {
+            text-align:center;
+            padding:20px;
+            color:#FDDB33;
+            display:block;
+            position: absolute;
+            top:100px;
+            bottom:0;
+            left:0;
+            right:0;
+            margin:auto;
+            opacity:0;
+            font-size:150%;
+            font-weight:100;
+        }
+
+        .otterlyP {
+            text-align: center;
+            position:absolute;
+            bottom:45vh;
+            width:200px;
+            left:15vw;
+            margin:auto;
+            opacity:0;
+        }
+        .otterBeEnough {
+            text-align: center;
+            position: absolute;
+            bottom:40vh;
+            width:200px;
+            right:15vw;
+            margin:auto;
+            opacity:0;
+        }
+        .mobileImage {
+            display: none;
+        }
+        
+        @media only screen and (max-width: 500px){
+            .header {
+                font-size:200%;
+            }
+            .mobileImage {
+                display:none;
+                width: 100%;
+                margin: 0 auto;
+                position:relative;
+                top:15vh;
+                border-radius:35px;
+            }
+            .face {
+                display:none;
+            }
+            .puns {
+                font-size:150%;
+            }
+            .otterlyP {
+                position:absolute;
+                top:40vh;
+                bottom:0;
+                left:0;
+                right:0;
+                margin:auto;
+                color:#fff;
+            }
+        }
+    </style>
+    <body>
+
+        <h2 class="helloHeader">Hello from the...</h2>
+        <h1 class="header"><span class="otter">Otter</span> <span class="side">Side!</span></h1>
+        <h6 class="inTheEyes">It's all in the eyes...</h6>
+        <div class="faceContainer">
+            <div class="face">
+                <img class="leftEye eyes" src="https://upload.wikimedia.org/wikipedia/commons/d/d3/Fischotter%2C_Lutra_Lutra.JPG" />
+                <img class="rightEye eyes" src="https://upload.wikimedia.org/wikipedia/commons/d/d3/Fischotter%2C_Lutra_Lutra.JPG" />
+            </div>
+        </div>
+        <img class="mobileImage" src="https://upload.wikimedia.org/wikipedia/commons/d/d3/Fischotter%2C_Lutra_Lutra.JPG" />
+        <p class="otterlyP">I'll be honest, the picture provided was <i>otterly</i> horrible from a design perspective but I tried my best! :)</p>
+        <p class="otterBeEnough">I figured 2 hours <i>otter</i> be enough time to complete a simple challenege until I started looking at puns! 30 minutes of my time was spent reading them!</p>
+
+            
+
+        <p class="puns"></p>
+
+
+        <script>
+            const puns = ["We'll ottermaticaly become friends!", "I'm not like the otters!", "You should have see the otter guy!", "Hey, hold up! Wait for the otters!", "We need to leave now, otterwise we’ll be late!", "There’s some otterworldly feeling about this place!", "That’s otter nonsense!", "I wish I could explore otter space!", "I’m otter here!", "The ottermost layer is the hardest!", "Ten minutes otter be enough time!", "She finished the otterbiography!", "The ottermation of many repetitive jobs is happening now!", "I’ve switched the plane to otterpilot mode!", "Grand theft otter!",];
+            const body = document.querySelector("body");
+            const header = document.querySelector(".header");
+            const helloHeader = document.querySelector(".helloHeader");
+            const img = document.querySelector(".img");
+
+            window.onload = function(e){
+                let i = 0;
+                setInterval(function(){
+                    document.querySelector(".puns").innerHTML = "Lvl up your pun game:  " + puns[i];
+                    if (i < puns.length - 1){
+                        i++;
+                    } else {
+                        i = 0;
+                    }
+                    
+                }, 5000);
+                setTimeout(function(){
+                    $(".otter").animate({left: "10"}, 1000);
+                    $(".side").animate({right: "10"}, 1000, function(){
+                        $(".otter").animate({left: "0"}, 300);
+                        $(".side").animate({right: "0"}, 300);
+                        $(".helloHeader").animate({opacity:"0"}, 200, function(){
+                            setTimeout(function(){
+                                $(".header").animate({top: "20px"}, 1000, function(){
+                                    if ($(window).width() > 500){
+                                        $(".face").css("z-index", "10");
+                                        $(".face").animate({opacity:"1"},1000, function(){
+                                            $(".inTheEyes").animate({opacity:"1"},1000, function(){
+                                                $(".inTheEyes").animate({fontSize: "100%"}, 1000);
+                                            });
+                                        });
+                                    } else {
+                                        $(".mobileImage").fadeIn(1000);
+                                        $(".otterlyP").animate({opacity:"1"},1000);
+                                    }
+                                    
+                                    
+                                });
+                            }, 750);
+                            
+                        });
+                    });
+                }, 4000);
+                              
+            }
+
+            $(".leftEye").click(function(){
+                if ($(".otterlyP").css("opacity") == "0"){
+                    $(".otterlyP").animate({opacity:"1"},500);
+                    $(".leftEye").css("border", "2px solid yellow");
+                } else {
+                    $(".otterlyP").animate({opacity:"0"},500);
+                    $(".leftEye").css("border", "2px solid black");
+                }
+                
+            });
+            
+            $(".rightEye").click(function(){
+                if ($(".otterBeEnough").css("opacity") == "0"){
+                $(".otterBeEnough").animate({opacity:"1"},500);
+                $(".rightEye").css("border", "2px solid yellow");
+                } else {
+                    $(".otterBeEnough").animate({opacity:"0"},500);
+                $(".rightEye").css("border", "2px solid black");
+                }
+            });
+          
+        
+        
+
+        
+        
+        </script>
+    </body>
+</html>
